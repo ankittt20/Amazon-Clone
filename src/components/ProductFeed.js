@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Product from "./Product";
 
@@ -18,8 +19,10 @@ const ProductFeed = ({ products }) => {
           />
         ))}
 
-      <img
+      <Image
         className="md:col-span-full px-10"
+        width={1500}
+        height={300}
         src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/vineet/Amazon-Pay-Later/Jan_23/Jan_ART/2300x646_GW-editorial._CB615648357_.jpg"
         alt=""
       />

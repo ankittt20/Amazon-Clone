@@ -62,7 +62,7 @@ function Header() {
           <p className="link hidden lg:inline-flex">Gift Ideas</p>
           <p className="link hidden lg:inline-flex">Subscribe & Save</p>
           <p className="link hidden lg:inline-flex">Electronics</p>
-          <p className="link hidden lg:inline-flex">Ankit's Amazon.in</p>
+          <p className="link hidden lg:inline-flex">Ankit&apos;s Amazon.in</p>
           <p className="link hidden lg:inline-flex">Health, Household & Personal Care</p>
         </div>
       </div>

@@ -11,8 +11,10 @@ const Product = ({ id, title, price, description, category, image }) => {
   const hasPrime = Math.random() < 0.5;
   return (
     <div className="relative flex flex-col bg-white z-30 p-10 mx-2">
-      <p className="absolute top-2 right-2 text-xs italic text-gray-400">{category}</p>
-      <Image src={image} width={200} height={200} alt="Product Image"/>
+      <p className="absolute top-2 right-2 text-xs italic text-gray-400">
+        {category}
+      </p>
+      <Image src={image} width={200} height={200} alt="Product Image" />
       <h4 className="my-3">{title}</h4>
       <div className="flex">
         {Array(randomRating)
@@ -27,7 +29,13 @@ const Product = ({ id, title, price, description, category, image }) => {
       </div>
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <img className="w-12" src="https://links.papareact.com/fdw" alt="Prime" />
+          <Image
+            className="w-12"
+            width={300}
+            height={150}
+            src="https://links.papareact.com/fdw"
+            alt="Prime"
+          />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
