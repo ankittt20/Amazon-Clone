@@ -2,15 +2,33 @@ import React from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import CurrencyFormat from "react-currency-format";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
-const Product = ({ id, title, price, description, category, image }) => {
+const Product = ({ id, title, price, rating, description, category, image }) => {
+  const dispatch = useDispatch();
   const MAX_RATING = 5;
   const MIN_RATING = 1;
   const randomRating =
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING;
   const hasPrime = Math.random() < 0.5;
+  const addItemToCart = () => {
+    const cartItem = {
+      id,
+      title,
+      price,
+      rating,
+      description,
+      category,
+      image,
+      hasPrime,
+    };
+    // Push item to cart
+    dispatch(addToBasket(cartItem));
+  };
+
   return (
-    <div className="relative flex flex-col bg-white z-30 p-10 mx-2">
+    <div className="relative flex flex-col bg-white z-30 p-10 m-2 shadow-md">
       <p className="absolute top-2 right-2 text-xs italic text-gray-400">
         {category}
       </p>
@@ -39,7 +57,7 @@ const Product = ({ id, title, price, description, category, image }) => {
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
-      <button className="mt-auto button">Add to Cart</button>
+      <button onClick={addItemToCart} className="mt-auto button">Add to Cart</button>
     </div>
   );
 };
