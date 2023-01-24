@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 import { useSession } from "next-auth/react";
 
-const checkout = () => {
+const Checkout = () => {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const {data : session} = useSession();
@@ -72,4 +72,4 @@ const checkout = () => {
   );
 };
 
-export default checkout;
+export default Checkout;
